@@ -8,6 +8,7 @@ The purpose of this project is to find clusters of similar games in terms of rev
 
 ### Methods Used
 * Kmodes clustering
+* Linear regression
 * Webscraping
 * Data Cleaning and feature generation
 
@@ -18,21 +19,11 @@ The purpose of this project is to find clusters of similar games in terms of rev
 * Kmodes Package
 
 ## Project Description
-(Provide more detailed overview of the project.  Talk a bit about your data sources and what questions and hypothesis you are exploring. What specific data analysis/visualization and modelling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
+I am an avid gamer. I always wanted to know if better games cost more money to play, or if they just went on sale less often. Thus, I acquired data for over 25,000 games off the Steam website (https://store.steampowered.com/search/?) to see how many games fall under the "cheaper with bad reviews" category. 
+
+However, due to complications and my inexperience later on into the project, I had to change course and instead ask a different question: To what extent do reviews affect the selling prices of games? This complication, as well as my entire process, will be explained down below.
 
 ## Description of my Current Process and Next Steps
-
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
-
-    *If using offline data mention that and how they may obtain the data from the froup)*
-    
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
-
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
-
-5. Follow setup [instructions](Link to file)
 
 
 ## Contact
