@@ -180,8 +180,9 @@ Now its time to finally cluster! Because I want to cluster reviews with original
 ```python
 # splitting original price and reviews
 
-data_categorical = data[['original price', 'Mostly Negative', 'Mostly Positive', 'None', 'Overwhelmingly Positive',
-              'Positive', 'Very Positive']]
+data_categorical = data[['original price', 'Mostly Negative', 'Mostly Positive', 'None', 
+'Overwhelmingly Positive', 'Positive', 'Very Positive']]
+
 # clustering on training data
 
 km = KModes(n_clusters=4, init='Huang', n_init=5, verbose=1)
