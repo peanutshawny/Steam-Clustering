@@ -118,6 +118,37 @@ The initial data looked like this.
 
 ![](images/initial%20data.PNG)
 
+Not too great-looking, considering there's a lot of dates missing (so that excludes age from a potential attribute), every useful variable is a string, and the discounted price has trailing characters. Here is what I did to clean the data.
+
+```python
+# converting discount to decimal and replacing NA's with 0
+
+data['discount'] = data['discount'].str.rstrip('%').astype('float') / 100.0 *(-1)
+data[['discount','discounted price']] = data[['discount','discounted price']].fillna(value = 0)
+
+# converting 'free to play' to a price of 0 and stripping unecessary strings from original price
+
+data = data.replace(to_replace = ['Free to Play', 'Free To Play', 'Free', 'Play for Free!', 
+                                  'Free Demo', 'Free Movie', '1 Season', 'Third-party',
+                                  'Play Now', 'Free Mod', 'From CDN$ 25.60', 'Install',
+                                  'CDN$ 1,200.76', 'From CDN$ 25.31', 'From CDN$ 19.20'], value = np.nan)
+
+data['original price'] = data['original price'].str.lstrip('CDN$ ').astype('float')
+data['original price'] = data['original price'].fillna(value = 0)
+
+# formatting discounted price
+
+data = data.replace(to_replace = 'CDN$ 1,063.85							', value = np.nan)
+data['discounted price'] = data['discounted price'].str.lstrip('CDN$ ').str.rstrip('\t\t\t\t\t\t\t').astype('float')
+data['discounted price'] = data['discounted price'].fillna(value = data['original price'])
+
+```
+
+This is what it looks like afterwards.
+
+![](cleaned%20data.PNG)
+
+A lot better right? Well we still have to cluster 
 
 ## Contact
 * feel free to email me at shawnliu30@gmail.com!
