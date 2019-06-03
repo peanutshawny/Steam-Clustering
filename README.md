@@ -248,7 +248,9 @@ Now that I made some mistakes in defining my question according to the model I w
 Next Steps:
 * Find more data on games from Steam or otherwise (such as missing dates, number of reviews, genre, etc.)
 * Categorize again with k-prototypes and intepret results
-* Find a more permanent solution to some quick fixes implemented earlier on
+* Find a more permanent solution to some quick fixes implemented earlier on (using asterisks as separators, random errors in webscraper)
+* Perform a similar analysis on games that cost a non-zero amount
+* Run the analysis again in a different time period (Steam discounts change daily)
 
 ## Contact
 
