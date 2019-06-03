@@ -23,7 +23,7 @@ I am an avid gamer. I always wanted to know if better games cost more money to p
 
 However, due to complications and my inexperience later on into the project, I had to change course and instead ask a different question: To what extent do reviews affect the selling prices of games? This complication, as well as my entire process, will be explained down below.
 
-## Description of my Current Process and Next Steps
+## Description of my Current Process
 Here's a breakdown of the steps I took and the conclusion I arrived at:
 
 I first created a webscraper using Beautifulsoup to scrap over 25,000 games off the steam website. Fields that were scrapped include title, release date, reviews, price, discount, and discounted price.
@@ -237,5 +237,19 @@ print(print_model)
 
 ![](images/regression.PNG)
 
+These results were a little odd to say the least. It seems that the constant (which represented 'Mixed' reviews as well as all other unexplained factors) was positive, meaning that it is likely (because most other reviews had a negative coefficient while mostly being statistically significant) that the attribute with the smallest statistically signficant coefficient ('Very Positive' reviews) was the most likely to be the most expensive game!
+
+An occurance I do not know how to explain is the apparent positive statistically significant coefficient of 'Mostly Negative' reviews, which could mean that the most costly games (usually triple A) titles, were the most negatively received by gamers! Given my hunch that the average user on Steam is most likely to prefer cheaper Indie games, this assumption intuitively makes sense. However, given the extremely low adjusted R square, more research should be done in the future to fully flesh out this model.
+
+## Conclusion & Next Steps
+
+Now that I made some mistakes in defining my question according to the model I want to build, I know for next time to keep that part of my workstream as broad as possible to make sure I don't tunnel in on one specific method.
+
+Next Steps:
+* Find more data on games from Steam or otherwise (such as missing dates, number of reviews, genre, etc.)
+* Categorize again with k-prototypes and intepret results
+* Find a more permanent solution to some quick fixes implemented earlier on
+
 ## Contact
-* feel free to email me at shawnliu30@gmail.com!
+
+Feel free to email me at shawnliu30@gmail.com!
