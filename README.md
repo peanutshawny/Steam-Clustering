@@ -194,6 +194,9 @@ kmodes = km.cluster_centroids_
 print(kmodes)
 
 ```
+![](images/kmodes.PNG)
+
+It's right here where I realized I made a mistake. All of my categorical variables were mutually exclusive, which means that I won't get any useful insights from clustering, as the clusters won't mean anything
 
 ## Contact
 * feel free to email me at shawnliu30@gmail.com!
