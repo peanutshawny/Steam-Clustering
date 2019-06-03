@@ -112,6 +112,20 @@ f.close()
 The data was then inputted into a text file and onto a Jupyter Notebook for cleaning. I had some trouble separating the different attributes into columns as the game titles tend to include most separators, such as commas. As a temporary fix, I used an asterisk as a separator to leave out as little data points as possible from my analysis.
 
 ```python
+# import packages
+
+import pandas as pd
+import numpy as np
+import os
+import statsmodels.api as sm
+import matplotlib.pyplot as plt
+from kmodes.kmodes import KModes
+from sklearn.linear_model import LinearRegression
+
+# setting path
+
+path = 'C:\Python\webscrape'
+os.chdir(path) 
 data = pd.read_csv('steam_sales May, 12, 2019.txt', delimiter = '*', error_bad_lines = False)
 ```
 The initial data looked like this. 
@@ -146,9 +160,40 @@ data['discounted price'] = data['discounted price'].fillna(value = data['origina
 
 This is what it looks like afterwards.
 
-![](cleaned%20data.PNG)
+![](images/cleaned%20data.PNG)
 
-A lot better right? Well we still have to cluster 
+A lot better right? Well we still have to cluster so some one-hot encoding will have to used to turn all the reviews into categorical variables.
+
+```python
+# filling in 'None' reviews and one hot encoding to handle categorical review variable
+
+data['reviews'] = data['reviews'].fillna(value = 'None')
+data = pd.concat([data ,pd.get_dummies(data['reviews'], drop_first = True)],axis=1)
+data.drop(['reviews'], axis=1, inplace=True)
+```
+This the final product:
+
+![](images/categorical%20data.PNG)
+
+Now its time to finally cluster! Because I want to cluster reviews with original price to see which games belong in which category, I used the kmodes clustering method, which defines clusters based on the number of matching categories between data points. This is in contrast to the more well-known k-means algorithm, which clusters numerical data based on Euclidean distance. Because my original price variable is continuous while my review variables are cateogrical, I will have to use k-prototypes, which combines k-modes and k-means and is able to cluster mixed numerical / categorical data.
+
+```python
+# splitting original price and reviews
+
+data_categorical = data[['original price', 'Mostly Negative', 'Mostly Positive', 'None', 'Overwhelmingly Positive',
+              'Positive', 'Very Positive']]
+# clustering on training data
+
+km = KModes(n_clusters=4, init='Huang', n_init=5, verbose=1)
+
+clusters = km.fit_predict(data_categorical)
+kmodes = km.cluster_centroids_
+
+# print the cluster centroids
+
+print(kmodes)
+
+```
 
 ## Contact
 * feel free to email me at shawnliu30@gmail.com!
