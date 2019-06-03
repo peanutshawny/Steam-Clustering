@@ -239,7 +239,7 @@ print(print_model)
 
 These results were a little odd to say the least. It seems that the constant (which represented 'Mixed' reviews as well as all other unexplained factors) was positive, meaning that it is likely (because most other reviews had a negative coefficient while mostly being statistically significant) that the attribute with the smallest statistically signficant coefficient ('Very Positive' reviews) was the most likely to be the most expensive game!
 
-An occurance I do not know how to explain is the apparent positive statistically significant coefficient of 'Mostly Negative' reviews, which could mean that the most costly games (usually triple A) titles, were the most negatively received by gamers! Given my hunch that the average user on Steam is most likely to prefer cheaper Indie games, this assumption intuitively makes sense. However, given the extremely low adjusted R square, more research should be done in the future to fully flesh out this model.
+An occurance I do not know how to explain is the apparent positive statistically significant coefficient of 'Mostly Negative' reviews, which could mean that the most costly games (usually triple A titles such as Call of Duty), were the most negatively received by gamers! Given my hunch that the average user on Steam is most likely to prefer cheaper Indie games, this assumption intuitively makes sense. However, given the extremely low adjusted R square, more research should be done in the future to fully flesh out this model.
 
 ## Conclusion & Next Steps
 
@@ -252,4 +252,4 @@ Next Steps:
 
 ## Contact
 
-Feel free to email me at shawnliu30@gmail.com!
+Feel free to email me at shawnliu30@gmail.com if you want to talk about this project or data science in general!
