@@ -9,14 +9,14 @@ The purpose of this project is to find clusters of similar games in terms of rev
 ### Methods Used
 * Kmodes clustering
 * Linear regression
+* K-modes algorithm
 * Webscraping
 * Data Cleaning and feature generation
 
-### Technologies
+### Technologies/Languages
 * Python & Beautifulsoup
 * HTML
 * IPython & Jupyter Notebook
-* Kmodes Package
 
 ## Project Description
 I am an avid gamer. I always wanted to know if better games cost more money to play, or if they just went on sale less often. Thus, I acquired data for over 25,000 games off the Steam website (https://store.steampowered.com/search/?) to see how many games fall under the "cheaper with bad reviews" category. 
@@ -26,7 +26,7 @@ However, due to complications and my inexperience later on into the project, I h
 ## Description of my Current Process
 Here's a breakdown of the steps I took and the conclusion I arrived at:
 
-I first created a webscraper using Beautifulsoup to scrap over 25,000 games off the steam website. Fields that were scrapped include title, release date, reviews, price, discount, and discounted price.
+I first created a webscraper using Beautifulsoup to scrap over 25,000 games off the steam website. Fields that were scraped include title, release date, reviews, price, discount, and discounted price.
 
 ```python
 def make_soup(url):
