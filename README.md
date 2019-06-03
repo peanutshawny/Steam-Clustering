@@ -197,7 +197,41 @@ print(kmodes)
 ```
 ![](images/kmodes.PNG)
 
-It's right here where I realized I made a mistake. All of my categorical variables were mutually exclusive, which means that I won't get any useful insights from clustering, as the clusters won't mean anything
+It's right here where I realized I made a mistake. All of my categorical variables were mutually exclusive, which means that I won't get any useful insights from clustering, as the clusters won't mean anything.
+
+I had to go back the drawing board, where I redefined my question from clustering to describing, with none other than a simple linear regression! I started off by visualizing some scatterplots of reviews with respect to original price. I already knew the reviews categories were mutually exclusive so at least there wasn't any multi-collinearity to worry about!
+
+```python
+plt.scatter(data['Overwhelmingly Positive'], data['original price'])
+plt.xlabel("Overwhelmingly Positive or Not Overwhelmingly Positive?")
+plt.ylabel("Original Price")
+```
+![](images/scatterplot.PNG)
+
+Most scatterplots turned out this way, with a slight negative correlation with regard to original price. The regression model showed similar results.
+
+```python
+# setting up x and y variables
+x = data[['Mostly Negative', 'Mostly Positive', 'None', 'Overwhelmingly Positive',
+              'Positive', 'Very Positive']]
+y = data['original price']
+model = LinearRegression().fit(x,y)
+
+# printing intercept and coefficients 
+print('intercept:', model.intercept_)
+print('coefficients:', model.coef_)
+
+# printing statsmodel
+x = sm.add_constant(x) # adding a constant
+ 
+model = sm.OLS(y, x).fit()
+predictions = model.predict(x) 
+ 
+print_model = model.summary()
+print(print_model)
+```
+
+![](images/regression.PNG)
 
 ## Contact
 * feel free to email me at shawnliu30@gmail.com!
