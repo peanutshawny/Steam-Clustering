@@ -109,8 +109,17 @@ for num in range(2, 2429):
 
 f.close()
 ```
-* The data was then inputted into a text file and onto a Jupyter Notebook for cleaning. I had some trouble separating the different attributes into columns as the game titles tend to include most separators, such as commas.
-* 
+The data was then inputted into a text file and onto a Jupyter Notebook for cleaning. I had some trouble separating the different attributes into columns as the game titles tend to include most separators, such as commas. As a temporary fix, I used an asterisk as a separator to leave out as little data points as possible from my analysis.
+
+```python
+data = pd.read_csv('steam_sales May, 12, 2019.txt', delimiter = '*', error_bad_lines = False)
+```
+The initial data looked like this. 
+
+```python
+
+```
+
 
 ## Contact
 * feel free to email me at shawnliu30@gmail.com!
