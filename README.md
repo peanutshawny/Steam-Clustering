@@ -116,9 +116,7 @@ data = pd.read_csv('steam_sales May, 12, 2019.txt', delimiter = '*', error_bad_l
 ```
 The initial data looked like this. 
 
-```python
-
-```
+![](images/initial%20data.PNG)
 
 
 ## Contact
