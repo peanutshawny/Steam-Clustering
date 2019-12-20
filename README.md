@@ -1,7 +1,7 @@
 # Steam Games Clustering
 This project is my first machine learning project as I start my journey into the world of data science!
 
-#### -- Project Status: [Active]
+#### -- Project Status: [Inactive]
 
 ## Project Intro/Objective
 The purpose of this project is to find clusters of similar games in terms of reviews and price. I want to know which games are the most bang for my buck.
