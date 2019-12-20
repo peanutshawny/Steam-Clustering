@@ -1,5 +1,5 @@
-# Steam Games Clustering
-This project is my first machine learning project as I start my journey into the world of data science!
+# steam analysis
+This project is my first machine learning project as I scrape game data off steam so I can predict what goes into determining the price of a game!
 
 #### -- Project Status: [Inactive]
 
